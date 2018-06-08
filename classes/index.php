@@ -30,7 +30,7 @@ require_once "DB.php";
         <label for="titel">Titel</label>
         <input type="text" id="titel" name="titel" class="form-control mx-sm-3" >
 
-        <label for="inhoud">inhoud</label>
+        <label for="inhoud">Inhoud</label>
         <textarea type="text" id="inhoud" name="inhoud" class="form-control mx-sm-3"></textarea>
 
         <label for="datum">Datum</label>
