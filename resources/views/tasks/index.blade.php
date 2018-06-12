@@ -16,11 +16,7 @@
 </head>
 
 <body>
-@foreach($tasks as $tasks)
-{{$tasks->titel}}
-    @endforeach
-
-
+{{$tasks}}
 
 
 </body>

@@ -17,9 +17,9 @@
 
 <body>
 
-
-    <h1>{{ $tasks->title }}</h1>
-
+@foreach($tasks as $tasks)
+    <h1>{{ $tasks}}</h1>
+@endforeach
 </body>
 
 </html>
