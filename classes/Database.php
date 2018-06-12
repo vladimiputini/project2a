@@ -34,7 +34,7 @@ class DB
 
 }
 
-
+//index
 $conn = new DB("localhost","blog","root","");
 
 $conn->dbconnect();
