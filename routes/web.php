@@ -20,8 +20,12 @@
 
 //});
 
+Route::get('/','PostsController@index');
 
-Route::get('/tasks','TaskController@index');
+Route::get('posts/index','PostsController@index' );
 
-Route::get('/tasks/{task}','TaskController@show');
+//Route::get('posts/{posts}', 'PostsController@show');
 
+Route::get('/posts/create','PostsController@create' );
+
+Route::post('/posts','PostsController@store');
