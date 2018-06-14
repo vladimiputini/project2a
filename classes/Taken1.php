@@ -5,8 +5,8 @@
  * Date: 14/05/18
  * Time: 22:29
  */
-require_once "DB.php";
-class validatie extends DB
+require_once "Database.php";
+class validatie extends D
 {
 
     public function check(){

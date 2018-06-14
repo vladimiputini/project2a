@@ -6,7 +6,7 @@
  * Time: 22:03
  */
 
-class DB
+class Database
 {
     protected $servername;
     protected $dbname;
@@ -27,14 +27,11 @@ class DB
         if ($connection->connect_errno){
             die("connection failed:". $connection->connect_error);
         }
-//        else {
-//            echo "connected";
-//        }
     }
 
 }
 
 //index
-$conn = new DB("localhost","blog","root","");
-
-$conn->dbconnect();
+//$conn = new DB("localhost","blog","root","");
+//
+//$conn->dbconnect();
