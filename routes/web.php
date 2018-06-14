@@ -13,20 +13,19 @@
 
 
 // example.com/.. it wil return the view welcome, so you will be returned to welcome.blade.php
-Route::get('/tasks', function () {
+//Route::get('/tasks', function () {
+//
+//    //these means he will get all info from tasks table from the DB
+////    $tasks = DB::table('tasks')->latest()->get();
 
-    //these means he will get all info from tasks table from the DB
-    $tasks = DB::table('tasks')->latest()->get();
+//});
 
-    return view('tasks.index', compact('tasks'));
-});
+Route::get('/','PostsController@index');
 
-Route::get('tasks/{task}', function ($id) {
+Route::get('posts/index','PostsController@index' );
 
-    //Searche Tasks by id
-    $tasks = DB::table('tasks')->find($id);
+//Route::get('posts/{posts}', 'PostsController@show');
 
-    return view('tasks.show', compact('tasks'));
-});
+Route::get('/posts/create','PostsController@create' );
 
-
+Route::post('/posts','PostsController@store');
