@@ -1,7 +1,32 @@
-@include('layouts')
+@extends('layouts.layout')
 
 @section('content')
 
-    <h1>A place to show</h1>
+
+    <div class="blog-post">
+
+        <table id="customers">
+            <tr>
+                <th>{{$post->titel}}</th>
+
+            </tr>
+            <tr>
+                <td>Inhoud:&nbsp;{{$post->inhoud}}</td>
+
+            </tr>
+            <tr>
+                <td>Eind datum:&nbsp;{{$post->Einddatum}}</td>
+            </tr>
+
+            <tr>
+                {{----}}
+            </tr>
+            <tr>
+                {{----}}
+            </tr>
+        </table>
+
+
+    </div>
 
     @endsection

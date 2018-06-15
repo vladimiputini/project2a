@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-<form class="form-signin" method="POST" action="posts">
+<form class="form-signin" method="POST" action="/posts">
 
     {{  csrf_field() }}
 

@@ -9,11 +9,16 @@ class PostsController extends Controller
 {
     public function index(){
 
-        return view('posts.index');
+       $posts = Post::all();
+
+        return view('posts.index',compact('posts'));
     }
 
-    public function show(){
-        return view('posts.show');
+    public function show(Post $post){
+
+//        $posts = Post::find($id);
+
+        return view('posts.show',compact('post'));
     }
 
     public function create(){
@@ -23,14 +28,7 @@ class PostsController extends Controller
 
     public function store(){
 
-        $post = new Post;
-
-        $post->titel = request('titel');
-        $post->inhoud = request('inhoud');
-
-        //save in to db
-
-        $post->save();
+        Post::create(request(['titel','inhoud','Einddatum']));
 
         return redirect('/');
 
