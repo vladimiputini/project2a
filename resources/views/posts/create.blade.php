@@ -1,6 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
+
 <form class="form-signin" method="POST" action="/posts">
 
     {{  csrf_field() }}
@@ -19,7 +20,7 @@
     <label for="text">Inhoud</label>
     <div class="form-label-group">
 
-        <input type="text" id="inhoud" class="form-control"  required>
+        <input type="text" id="inhoud" name="inhoud" class="form-control">
 
     </div>
     <label for="text">Eind datum</label>

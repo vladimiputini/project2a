@@ -1,7 +1,12 @@
+
 <div class="">
     <table id="customers">
         <tr>
-            <th><a href="/posts/{{$post}}" >{{$post->titel}}</a></th>
+            <th><a href="/posts/{{ $post->id }}" >
+
+                    {{$post->titel}}
+                </a>
+            </th>
 
         </tr>
         <tr>

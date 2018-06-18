@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../../../favicon.ico">
 
     <title>Album example for Bootstrap</title>
 
@@ -19,11 +18,9 @@
 <body>
 
 <header>
-    @yield('content')
- @include('layouts.nav')
+    @include('layouts.nav')
 </header>
-
-{{--@include('layouts.sidebar')--}}
+@yield('content')
 
 @include('layouts.footer')
 <!-- Bootstrap core JavaScript
@@ -32,8 +29,5 @@
 <!-- Bootstrap core JavaScript -->
 <script src="vendor/jquery/jquery.min.js"></script>
 <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="../../../../assets/js/vendor/popper.min.js"></script>
-<script src="../../../../dist/js/bootstrap.min.js"></script>
-<script src="../../../../assets/js/vendor/holder.min.js"></script>
 </body>
 </html>
