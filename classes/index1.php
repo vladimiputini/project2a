@@ -16,14 +16,13 @@ require 'Taken.php';
 </head>
 <body>
 <h1>Takenlijst</h1><br/>
-<form class="form-inline"  action="
-<?php
-$titel  = $_POST["titel"];
-$inhoud = $_POST["inhoud"];
+<form class="form-inline"  action="<?php
+if (isset($_POST['submit'])){
+    $titel  = $_POST["titel"];
+    $inhoud = $_POST["inhoud"];
 
 $taken = new Taken();
-$taken->create($titel, $inhoud); ?>
-"  method="post">
+$taken->create($titel, $inhoud);} ?>"  method="post">
 
     <div class="form-group">
 
