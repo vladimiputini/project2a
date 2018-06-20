@@ -18,11 +18,11 @@
 <body>
 
 <header>
-    @include('layouts.nav')
 </header>
-@yield('content')
+@include('layouts.nav')
 
-@include('layouts.footer')
+@yield('content')
+{{--@include('layouts.footer')--}}
 <!-- Bootstrap core JavaScript
 ================================================== -->
 <!-- Placed at the end of the document so the pages load faster -->

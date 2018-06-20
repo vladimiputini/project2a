@@ -1,55 +1,51 @@
 @extends('layouts.layout')
 
-{{--@section('content')--}}
-
-    {{--<input value="{{$post->titel}}">--}}
-    {{--<input value="{{$post->inhoud}}">--}}
-    {{--<input type="date" value="{{$post->Einddatum}}">--}}
-    {{--<div class="row">--}}
-        {{--<div class="col-sm-6">--}}
-            {{--{!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}--}}
-        {{--</div>--}}
-        {{--<div class="col-sm-6">--}}
-            {{--{!! Html::linkRoute('posts.update', 'Save Changes', array($post->id), array('class' => 'btn btn-success btn-block')) !!}--}}
-        {{--</div>--}}
-    {{--</div>--}}
-    {{--@endsection--}}
-
 @section('content')
-    <div class="row">
-        {!! Form::model($post, ['route' => ['posts.update', $post->id]]) !!}
-        <div class="col-md-8">
-            {{ Form::label('title', 'Title:') }}
-            {{ Form::text('title', null, ["class" => 'form-control input-lg']) }}
 
-            {{ Form::label('body', "Body:", ['class' => 'form-spacing-top']) }}
-            {{ Form::textarea('body', null, ['class' => 'form-control']) }}
+    <html>
+    <head>
+        <title>Look! I'm CRUDding</title>
+        <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
+    </head>
+    <body>
+    <div class="container">
+
+        {{--<nav class="navbar navbar-inverse">--}}
+            {{--<div class="navbar-header">--}}
+                {{--<a class="navbar-brand" href="{{ URL::to('/') }}">Nerd Alert</a>--}}
+            {{--</div>--}}
+            {{--<ul class="nav navbar-nav">--}}
+                {{--<li><a href="{{ URL::to('nerds') }}">View All Nerds</a></li>--}}
+                {{--<li><a href="{{ URL::to('nerds/create') }}">Create a Nerd</a>--}}
+            {{--</ul>--}}
+        {{--</nav>--}}
+
+        {{--<h1>Edit {{ $post->titel }}</h1>--}}
+
+        <!-- if there are creation errors, they will show here -->
+        {{--{{ HTML::ul($errors->all()) }}--}}
+
+        {{ Form::model($post, array('route' => array('updatepost', $post->id), 'method' => 'patch')) }}
+        <div class="form-group">
+            {{ Form::label('titel', 'titel') }}
+            {{ Form::text('titel', null, array('class' => 'form-control')) }}
         </div>
 
-        <div class="col-md-4">
-            <div class="well">
-                <dl class="dl-horizontal">
-                    <dt>Created At:</dt>
-                    <dd>{{ date('M j, Y h:ia', strtotime($post->created_at)) }}</dd>
-                </dl>
-
-                <dl class="dl-horizontal">
-                    <dt>Last Updated:</dt>
-                    <dd>{{ date('M j, Y h:ia', strtotime($post->updated_at)) }}</dd>
-                </dl>
-                <hr>
-                <div class="row">
-                    <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' => 'btn btn-danger btn-block')) !!}
-                    </div>
-                    <div class="col-sm-6">
-                        {!! Html::linkRoute('posts.update', 'Save Changes', array($post->id), array('class' => 'btn btn-success btn-block')) !!}
-                    </div>
-                </div>
-
-            </div>
+        <div class="form-group">
+            {{ Form::label('inhoud', 'inhoud') }}
+            {{ Form::text('inhoud', null, array('class' => 'form-control')) }}
         </div>
-        {!! Form::close() !!}
-    </div>	<!-- end of .row (form) -->
 
-@stop
+        <div class="form-group">
+            {{ Form::label('Einddatum', 'Einddatum Level') }}
+            {{ Form::date('Einddatum', null, array('class' => 'form-control')) }}
+        </div>
+
+        {{ Form::submit('Edit the Post!', array('class' => 'btn btn-primary')) }}
+
+        {{ Form::close() }}
+
+    </div>
+    </body>
+    </html>
+@endsection

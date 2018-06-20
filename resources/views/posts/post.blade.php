@@ -2,7 +2,7 @@
 <div class="">
     <table id="customers">
         <tr>
-            <th><a href="/posts/{{ $post->id }}" >
+            <th><a href="/posts/{{ $post->id }}">
 
                     {{$post->titel}}
                 </a>
@@ -15,7 +15,6 @@
         </tr>
         <tr>
             <td>{{$post->Einddatum}}</td>
-
         </tr>
         <tr>
 

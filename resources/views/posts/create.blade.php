@@ -26,7 +26,7 @@
     <label for="text">Eind datum</label>
     <div class="form-label-group">
 
-        <input type="date" id="datum" name="datum" class="form-control" placeholder="Datum" required>
+        <input type="date" id="datum" name="Einddatum" class="form-control" placeholder="Datum" required>
 
     </div>
 

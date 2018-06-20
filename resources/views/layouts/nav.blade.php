@@ -15,15 +15,12 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="/index">index
-                        <span class="sr-only">(current)</span>
-                    </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href=""></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/create">create</a>
+                    <a class="nav-link" href="{{URL::to('/posts/create')}}">create</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?return redirect('/'); ?>"></a>
