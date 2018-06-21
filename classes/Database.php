@@ -13,6 +13,7 @@ class Database
     protected $username;
     protected $password;
 
+    public $con;
 
     public function __construct($servername,$dbname,$username,$password){
         $this->dbname       = $dbname;
@@ -22,10 +23,10 @@ class Database
     }
 
     public function dbconnect(){
-       $connection =  mysqli_connect("localhost","root","","blog");
+       $this->con =  mysqli_connect("localhost","root","","blog");
 
-        if ($connection->connect_errno){
-            die("connection failed:". $connection->connect_error);
+        if ($this->con->connect_errno){
+            die("connection failed:". $this->con->connect_error);
         }
     }
 

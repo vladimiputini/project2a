@@ -15,7 +15,14 @@ require 'Taken.php';
     <title>BLOG</title>
 </head>
 <body>
-<h1>Takenlijst</h1><br/>
+<table class="table table-border">
+<tr>
+    <th><h1>Takenlijst</h1></th>
+    <th><input type="submit" name="submit" value="Go" class="btn btn-success"></th>
+</tr>
+</table>
+
+<br/>
 <form class="form-inline"  action="<?php
 if (isset($_POST['submit'])){
     $titel  = $_POST["titel"];
