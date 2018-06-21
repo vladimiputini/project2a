@@ -74,12 +74,12 @@ class PostsController extends Controller
 
     public function delete($id){
         //find the post by ID
-        $posts = Post::find($id);
+        $posts = Post::find($id)->delete();
 
-        $posts->forcedelete();
+//        $posts->forcedelete();
 
 //        Session::flash('success', 'The post was successfully deleted.');
-        return view('posts.index',compact('posts'));
+        return redirect('/');
     }
 
 

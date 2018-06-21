@@ -14,19 +14,13 @@
         <ul class="nav">
             <li><a href="{{ URL::to('/') }}">View All Post</a></li>
             <li><a href="{{ URL::to('/posts/create') }}">Create</a></li>
-            <li>
-                {{ Form::open(['route' => ['deletepost', $post->id], 'method' => 'delete']) }}
-                {{Form::submit('delete',['class'=>'btn btn-danger'])}}
-                {{ Form::close() }}
-
-            </li>
             <li><a href="{{ URL::route('editpost',$post->id) }}">Edit</a></li>
             {{--{{Fout zit in de url naar edit}}--}}
         </ul>
     </div>
 
     <h1>Showing {{ $post->titel }}</h1>
-    <h1>Showing {{ $post->id }}</h1>
+    {{--<h1>Showing {{ $post->id }}</h1>--}}
 
     <div class="jumbotron text-center">
         <h2>{{ $post->titel }}</h2>
@@ -36,7 +30,9 @@
             <strong>Einddatum:</strong> {{ $post->Einddatum }}
         </p>
     </div>
-
+    {{ Form::open(['route' => ['deletepost', $post->id], 'method' => 'delete']) }}
+    {{Form::submit('delete',['class'=>'btn btn-danger'])}}
+    {{ Form::close() }}
 </div>
 </body>
 </html>
